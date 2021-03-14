@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <link rel="icon" href="../media/bmwlogo.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/project.css">
+    <script src="../script/form_validation.js"></script>
+    <script src="../script/form_result.js"></script>
+    <meta charset="UTF-8">
+    <title>Personalisatie</title>
+</head>
+
+<body class="bodypersonalisering">
+<h1 class="verborgen">personaliseringspagina</h1>
+
+<header class="headerpers">
+    <nav>
+        <h2 class="verborgen"> menu</h2>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="productpagina.html">Modellen</a></li>
+            <li><a class="actievepagina">Personalisatie</a></li>
+            <li><a href="blogpagina.html">Blog</a></li>
+            <li><a href="contactpagina.html">Contact</a></li>
+            <li><a href="faqpagina.html">FAQ</a></li>
+            <li><a href="geschiedenispagina.html">Geschiedenis</a></li>
+            <li class="loginmenu">
+                <a href="#" class="loginbtn">Log in</a>
+                <section class="submenu">
+                    <h3 class="verborgen">Submenu</h3>
+                    <a href="registratiepagina.html">Registreren</a>
+                    <a href="aanmeldingspagina.html">Aanmelden</a>
+                </section>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<aside class="asidepers1">
+    <h2 class="verborgen"> foto dashboard</h2>
+    <img src="../media/dashboard.jpg" alt="bmw dashboard" class="imgdashboard">
+</aside>
+
+<main>
+    <section>
+        <h2 class="h1pers">Personaliseer hier uw eigen BMW</h2>
+        <hr class="hrpers">
+
+        <!-- formulier voor personalisatie -->
+        <form class="formpers" id="formpers" action="bevestigingspagina.html" method="post">
+
+            <fieldset>
+                <label for="Voornaam">Voornaam</label>
+                <input type="text" id="Voornaam" name="Voornaam" placeholder=" uw voornaam"
+                       class="textereapers" required/>
+
+                <label for="Achternaam">Achternaam</label>
+                <input type="text" id="Achternaam" name="Achternaam" placeholder="uw achternaam"
+                       class="textereapers" required/>
+                <span id="AchternaamSpan"></span>
+
+                <label for="email">E-mail</label>
+                <input type="text" id="email" name="email" placeholder=" uw e-mail adres"
+                       class="textereapers" required/>
+                <span id="emailSpan"></span>
+            </fieldset>
+
+            <fieldset>
+                <label for="Model">Model</label>
+                <select class="keuzeboxpers" id="Model" name="Model">
+
+                    <option value="BMW 1">BMW 1 vanaf €22.500</option>
+                    <option value="BMW 2">BMW 2 vanaf €35.000</option>
+                    <option value="BMW 2 cabrio">BMW 2 cabrio vanaf €45.000</option>
+                    <option value="BMW 3">BMW 3 vanaf €43.500</option>
+                    <option value="BMW 3 gt">BMW 3 gt vanaf €48.500</option>
+                    <option value="BMW 4">BMW 4 vanaf €52.500</option>
+                    <option value="BMW 8">BMW 8 vanaf €120.000</option>
+                    <option value="BMW Z4">BMW Z4 vanaf €80.000</option>
+
+                    <option value="BMW 1 hybride">BMW 1 hybride vanaf €32.500</option>
+                    <option value="BMW 2 hybride">BMW 2 hybride vanaf €45.000</option>
+                    <option value="BMW 2 cabrio hybride">BMW 2 cabrio hybride vanaf €55.000</option>
+                    <option value="BMW 3 hybride">BMW 3 hybride vanaf €53.500</option>
+                    <option value="BMW 8 hybride">BMW 8 hybride vanaf €130.000</option>
+                    <option value="BMW Z4 hybride">BMW Z4 hybride vanaf €90.000</option>
+
+                    <option value="BMW X1">BMW X1 vanaf €34.000</option>
+                    <option value="BMW X7">BMW X7 vanaf €95.000</option>
+
+                    <option value="BMW M1">BMW M1 vanaf €30.000</option>
+                    <option value="BMW M2">BMW M2 vanaf €42.000</option>
+                    <option value="BMW M4">BMW M4 vanaf €56.000</option>
+                    <option value="BMW M5">BMW M5 vanaf €67.000</option>
+                    <option value="BMW M8">BMW M8 vanaf €130.000</option>
+
+                    <option value="BMW X3 M">BMW X3 M vanaf €45.000</option>
+                    <option value="BMW X4 M">BMW X4 M vanaf €65.000</option>
+                    <option value="BMW X5 M">BMW X5 M vanaf €75.000</option>
+                    <option value="BMW X6 M">BMW X6 M vanaf €90.000</option>
+                    <option value="BMW X7 M">BMW X7 M vanaf €130.000</option>
+                </select>
+
+                <label for="motor">selecteer het aantal pk dat uw BMW zal hebben.</label>
+                <select id="motor" class="keuzeboxpers" name="motor">
+                    <option>300pk</option>
+                    <option>400pk + €20.000</option>
+                    <option>450pk + €25.000</option>
+                    <option>500pk + €35.000</option>
+                    <option>600pk + €50.000</option>
+                </select>
+            </fieldset>
+
+            <fieldset>
+                <label>Kies de kleur van uw BMW</label>
+                <section id="kleur" class="btnkleur" data-toggle="buttons">
+                    <h3 class="verborgen">kleurenbox</h3>
+                    <label class="wit">
+                        <input type="radio" name="options">
+                    </label>
+
+                    <label class="grijs">
+                        <input type="radio" name="options">
+                    </label>
+
+                    <label class="lichtblauw">
+                        <input type="radio" name="options">
+                    </label>
+
+                    <label class="donkerblauw">
+                        <input type="radio" name="options">
+                    </label>
+
+                    <label class="paars">
+                        <input type="radio" name="options">
+                    </label>
+
+                    <label class="zwart">
+                        <input type="radio" name="options" checked>
+                    </label>
+
+                    <label class="mdb">
+                        <input type="radio" name="options">
+                    </label>
+
+                    <label class="rood">
+                        <input type="radio" name="options">
+                    </label>
+                </section>
+            </fieldset>
+
+            <fieldset>
+                <label for="tekst">Noteer hier wat u op uw BMW wilt zetten</label>
+                <input type="text" id="tekst" name="tekst" placeholder="Schrijf hier uw persoonlijke tekst"
+                       class="textereapers"/>
+
+                <label for="plaats">Waar wilt u uw persoonlijke tekst plaatsen?</label>
+                <select id="plaats" class="keuzeboxpers" name="plaats">
+                    <option value="a_o_n">op de achterkant onder de nummerplaat</option>
+                    <option value="a_l_n">op de achterkant links van de nummerplaat</option>
+                    <option value="a_r_n">op de achterkant rechts van de nummerplaat</option>
+                    <option value="a_b_n">op de achterkant boven de nummerplaat</option>
+                    <option value="v_o_n">op de voorkant onder de nummerplaat</option>
+                    <option value="v_l_n">op de voorkant links de nummerplaat</option>
+                    <option value="v_r_n">op de voorkant rechts de nummerplaat</option>
+                    <option value="v_b_n">op de voorkant boven de nummerplaat</option>
+                </select>
+            </fieldset>
+
+            <fieldset>
+                <input class="btnaanvraag" type="submit" onclick="passValues()">
+                <span id="submitSpan"></span>
+            </fieldset>
+
+        </form>
+    </section>
+
+    <figure>
+        <img src="../media/bmwmotor.jpg" alt="bmw motor" class="bmwmotor">
+    </figure>
+</main>
+<script src="../script/form_validation.js"></script>
+<aside class="asidepers2">
+    <h2 class="verborgen"> foto bmw stuur</h2>
+    <img src="../media/bmwvoorkant.jpg" alt="bmwstuur" class="imgstuur">
+</aside>
+
+<footer>
+    <section>
+        <h2>Sociale media BMW Deluxe</h2>
+        <section>
+            <h3 class="verborgen">links social media</h3>
+            <a href="https://www.facebook.com/BMWBelux">
+                <img src="../media/facebook.png" alt="" class="imgfooter">
+            </a>
+            <a href="https://www.instagram.com/bmwbelux/">
+                <img src="../media/instagram.png" alt="" class="imgfooter">
+            </a>
+            <a href="https://www.youtube.com/user/BMWBelux">
+                <img src="../media/youtube.png" alt="" class="imgfooter">
+            </a>
+            <a href="https://www.linkedin.com/company/bmw-group-belux/">
+                <img src="../media/linkedin.jpg" alt="" class="imgfooter">
+            </a>
+        </section>
+    </section>
+</footer>
+
+</body>
+</html>

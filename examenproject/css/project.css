@@ -1,0 +1,850 @@
+/*-------------ALGEMEEN---------------*/
+* {
+    box-sizing: border-box;
+}
+
+.verborgen { /* voor outline, toont het niet in de site maar wel in de outline */
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    left: -20000px;
+}
+
+body { /*gebruik van grid */
+    display: grid;
+    height: 100vh;
+    grid-template-areas: "header header header header" "main main main main" "footer footer footer footer";
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 20fr 1fr;
+    place-content: stretch;
+    grid-gap: 20px;
+}
+
+main {
+    grid-area: main;
+    text-align: center;
+}
+
+/*---------------MENU-----------------*/
+header {
+    grid-area: header;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    height: 50px;
+    margin-bottom: 100px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    overflow: hidden;
+    border-radius: 20px;
+    margin: auto;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 1), 0 4px 14px rgba(0, 0, 0, 0.7);
+    background-color: lightgray;
+}
+
+a, li a {
+    text-decoration: none;
+}
+
+li a {
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    font-size: large;
+    float: left;
+}
+
+li a:hover:active, li a:hover {
+    background-color: black;
+}
+
+li a:visited, .loginbtn, li a, .submenu a {
+    color: black;
+}
+
+li a:hover {
+    color: lightgray;
+    transition: background-color 0.5s, border 0.5s, color 0.5s;
+}
+
+.actievepagina, .actievepagina:hover { /* actieve pagina: aanduiden waar je bent */
+    background-color: ButtonShadow;
+}
+
+.actievepagina:hover {
+    color: lightgray;
+    cursor: not-allowed;
+}
+
+li.loginmenu {
+    display: inline-block;
+    float: right;
+}
+
+.loginmenu:hover .submenu, .submenu a {
+    display: block;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    background-color: #ddd;
+    min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 30px;
+    right: 0;
+}
+
+.submenu a {
+    border-radius: 30px;
+}
+
+/*--------------FOOTER----------------*/
+footer {
+    grid-area: footer;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    justify-self: center;
+    color: white;
+    background-color: black;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    padding: 0.5% 40% 0.5% 40%;
+}
+
+.imgfooter {
+    height: 30px;
+    width: 30px;
+    margin: 7px;
+    padding: 1px;
+    background-color: black;
+    border-radius: 5px;
+}
+
+.imgfooter:hover {
+    opacity: 0.7;
+}
+
+/*----------EINDE ALGEMEEN------------*/
+/*------------------------------------*/
+/*--------------INDEX-----------------*/
+.headerhome { /* afbeelding op de achtergrond */
+    background-image: url("../media/bmwfront2.jpg");
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 98vh;
+    width: 100%;
+
+}
+
+.bodyhome {
+    background-color: black;
+    color: white;
+}
+
+.img1home { /* logo links boven */
+    place-self: center;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    margin: 15px 0 0 120px;
+    height: 10%;
+    width: 10%;
+}
+
+.bmwz4teksthome { /* titel en knop plaatsen */
+    margin-top: 100px;
+    margin-left: 10%;
+}
+
+.h1home { /* grootte titel */
+    font-size: 40px;
+    color: white;
+}
+
+.btnhome { /* layout knop */
+    background-color: lightgray;
+    color: black;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 300px;
+    border-radius: 30px;
+    border: black;
+}
+
+.mainhome {
+    display: grid;
+    grid-template-areas: "tekst1 tekst2 tekst3";
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr auto 1fr;
+}
+
+.figurevision {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    margin-top: 5pc;
+}
+
+/*------------einde INDEX-------------*/
+/*-----------PRODUCTPAGINA------------*/
+.bodyproduct, .naam {
+    background-color: white;
+    color: black;
+}
+
+.imgmodellen {
+    width: 100%;
+    height: auto;
+    padding: 2%;
+}
+
+.h1product {
+    font-size: 300%;
+}
+
+.h2product1 {
+    margin-left: -2%;
+}
+
+.h2product1, .h2product {
+    font-size: 200%;
+}
+
+.h2product, .foto {
+    float: left;
+}
+
+.naam {
+    padding: 5px 15px;
+}
+
+.foto {
+    margin-left: 6%;
+    padding: 10px;
+    max-height: 41%;
+    max-width: 41%;
+    box-shadow: 0 1px 0 0;
+}
+
+/*--------------BREADCRUMB------------*/
+.breadcrumb, .navsubcategorieen {
+    display: flex;
+    margin-top: 10px;
+    background-color: white;
+    font-size: 14px;
+}
+
+.breadcrumb li:after {
+    content: "/";
+    font-size: 25px;
+    margin-top: 10px;
+    display: flex;
+}
+
+.actievepaginabc {
+    text-decoration: underline black;
+    color: black;
+    cursor: not-allowed;
+}
+
+/* anchorlink / submenu voor producten te zoeken */
+.ulproduct, .linkproduct .aproduct:hover {
+    background: none;
+}
+
+.linkproduct a, .linkproduct:visited, .linkproduct .aproduct:hover {
+    color: black;
+}
+
+.linkproduct .aproduct:hover {
+    text-decoration: underline midnightblue;
+    font-size: 20px;
+    transition: font-size 0.5s;
+}
+
+/*            modellen              */
+.bodymodel { /* indelen van de pagina */
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 20fr 1fr;
+    grid-template-areas: "header header" "figure main" "footer footer";
+}
+
+.headermodel {
+    grid-area: header;
+}
+
+.figuremodel { /* foto */
+    grid-area: figure;
+    padding-left: 40px;
+    padding-top: 20px;
+}
+
+.imgz4 {
+    width: 800px;
+    max-width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 20px;
+}
+
+.verbruiktekst {
+    font-size: 15px;
+    margin-left: 50px;
+}
+
+.mainmodel { /* tekst */
+    grid-area: main;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.btnprijs, .btnmodel {
+    display: inline-block;
+    cursor: pointer;
+    padding: 16px 20px;
+    border-radius: 30px;
+    transition: background-color 0.5s;
+    background-color: lightgray;
+    color: black;
+    margin-bottom: 5px;
+}
+
+.btnmodel:hover, .btnprijs:hover {
+    background-color: black;
+    color: lightgray;
+}
+
+/*-------PERSONALISERINGSPAGINA-------*/
+.headerpers { /* achtergrond foto */
+    background-image: url("../media/bmwpers.jpg");
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: inherit;
+    background-attachment: fixed;
+    height: 70vh;
+    max-width: 100%;
+}
+
+.bodypersonalisering {
+    grid-template-areas: "header header header header" "aside main main aside" "footer footer footer footer";
+    background-color: black;
+    color: white;
+}
+
+.h1pers {
+    text-align: center;
+    font-size: 50px;
+}
+
+.hrpers {
+    margin-top: -15px;
+    margin-bottom: 100px;
+    width: 200px;
+}
+
+.formpers { /* formulier layout */
+    display: block;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: black;
+    margin-right: auto;
+    margin-left: auto;
+    min-width: 300px;
+    max-width: 500px;
+    min-height: 70vh;
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 100px;
+
+}
+
+fieldset {
+    border: black;
+}
+
+.asidepers1 {
+    grid-area: aside;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    margin-top: 300px;
+}
+
+.asidepers2 {
+    grid-area: aside;
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    margin-top: 300px;
+}
+
+.imgstuur, .imgdashboard {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+input[type=text], select { /* layout van tekst, input moet van het type text zijn */
+    width: 100%;
+    padding: 2%;
+    border: 1px none;
+    border-radius: 10px;
+    box-sizing: border-box;
+    margin-top: 1%;
+    margin-bottom: 2%;
+    resize: vertical;
+}
+
+.keuzeboxpers, .btnaanvraag {
+    color: black;
+    margin-bottom: 30px;
+}
+
+.textereapers, .keuzeboxpers, .btnaanvraag {
+    background-color: lightgray;
+}
+
+.btnaanvraag {
+    font-size: 24px;
+    padding: 16px 20px;
+    border: none;
+    max-width: 500px;
+    width: 100%;
+    border-radius: 50px;
+}
+
+.btnaanvraag:hover {
+    opacity: 0.5;
+}
+
+.bmwmotor {
+    max-width: 100%;
+}
+
+/*------------kleurenbox--------------*/
+.btnkleur { /* radiobuttons met kleuren */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+    padding: 5px;
+    width: 100%;
+    border-radius: 20px;
+}
+
+.wit {
+    background-color: white;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.grijs {
+    background-color: grey;
+}
+
+.lichtblauw {
+    background-color: lightblue;
+}
+
+.donkerblauw {
+    background-color: darkblue;
+}
+
+.paars {
+    background-color: purple;
+}
+
+.zwart {
+    background-color: black;
+}
+
+.rood {
+    background-color: red;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.mdb {
+    background-color: midnightblue;
+}
+
+.wit, .grijs, .lichtblauw, .donkerblauw, .paars, .zwart, .rood, .mdb {
+    zoom: 2;
+}
+
+/*--------bevestigingspagina----------*/
+.bevestigingsbericht {
+    margin-top: 70px;
+    zoom: 3;
+}
+
+/*---------blogpagina-----------------*/
+.tekstartikel {
+    max-width: 1000px;
+}
+
+.imgblog { /* plaatsen van foto in artikels */
+    width: 40%;
+    height: 40%;
+    border-radius: 4%;
+    margin-left: 20px;
+    margin-top: 20px;
+    float: right;
+}
+
+hr { /* scheiding tussen artikels */
+    grid-area: lijn;
+    margin-top: 10%;
+    margin-bottom: 5%;
+}
+
+/*----------contactpagina-------------*/
+.headercontact { /* achtergrond foto */
+    background-image: url("../media/bmwzaal.png");
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: inherit;
+    background-attachment: fixed;
+    height: 70vh;
+}
+
+
+.bmwemail:hover { /* wanneer je over email gaat, veranderen */
+    opacity: 0.7;
+    color: deepskyblue;
+    transition: opacity 0.5s, color 0.5s;
+}
+
+.openingsuren { /* tabel openingsuren */
+    min-height: 220px;
+    min-width: 100px;
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 50px;
+
+    border: 1px solid white;
+    border-radius: 20px;
+}
+
+th { /* titel tabel */
+    padding-bottom: 20px;
+}
+
+iframe { /* google maps locatie */
+    border-radius: 10px;
+    min-width: 250px;
+    width: 28%;
+    height: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*-----------faq----------------------*/
+.bodyfaq {
+    color: black;
+    background-color: white;
+}
+
+.mainfaq {
+    margin-left: 1%;
+    margin-right: 1%;
+    margin-bottom: 100px;
+    padding: 10px 5px 10px 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.h1faq {
+    font-size: 200%;
+}
+
+.h2faq {
+    padding-top: 20px;
+}
+
+.antwoord {
+    color: midnightblue;
+}
+
+.formfaq { /* formulier voor vragen */
+    background-color: lightgray;
+    color: midnightblue;
+    padding: 20px;
+    margin-right: 25%;
+    margin-left: 25%;
+    margin-bottom: 50px;
+    border-radius: 10px;
+}
+
+input[type=text], select, textarea { /* layout van textarea, input moet van het type text zijn */
+    width: 100%;
+    padding: 2%;
+    border: 0.5px none;
+    border-radius: 10px;
+    box-sizing: border-box;
+    margin-top: 1%;
+    margin-bottom: 2%;
+    resize: vertical;
+}
+
+input[type=submit] {
+    background-color: white;
+    color: black;
+    padding: 2% 4%;
+    border: none;
+    border-radius: 4%;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    opacity: 0.7;
+}
+
+.buttonfaq { /* verzendknop van vraag */
+    background-color: midnightblue;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 120px;
+    border-radius: 30px;
+}
+
+/*------------geschiedenis------------*/
+.geschiedenisbmw { /* tekst + foto */
+    text-align: justify-all;
+    color: black;
+    background-color: lightgray;
+    padding: 2% 2% 2% 2%;
+    border-radius: 30px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    position: absolute;
+    width: 1400px;
+    max-width: 100%;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
+
+.imggeschiedenis { /* foto */
+    height: 50%;
+    width: 50%;
+    float: right;
+    border-radius: 10px;
+    margin: 2% 2% 2% 2%;
+}
+
+/*------------regis/aanmel------------*/
+.bodyaanmelden { /* foto op pagina */
+    background-image: url("../media/bmwvisionnext.jpg");
+    height: 98vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.formaanmelden { /* formulier layout */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    min-width: 300px;
+    padding: 20px;
+    padding-right: 35px;
+    background-color: lightgray;
+    color: black;
+    border-radius: 10px;
+
+}
+
+.h2aanmelden {
+    color: midnightblue;
+    font-size: 30px;
+}
+
+input[type=email], input[type=password] {
+    width: 100%;
+    padding: 10px 10px 10px 10px;
+    margin: 15px 0 15px 0;
+    border: none;
+    background: #f1f1f1;
+    caret-color: midnightblue;
+    border-radius: 10px;
+}
+
+input[type=email]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+    caret-color: midnightblue;
+    border-radius: 10px;
+}
+
+.checkboxaanmelden { /* aanduiden of je aangemeld wilt blijven */
+    margin-bottom: 20px;
+    zoom: 1.5;
+}
+
+.btnaanmelden {
+    background-color: midnightblue;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 30px;
+}
+
+.btnaanmelden:hover {
+    opacity: 0.9;
+}
+
+.footeraanmelden {
+    background: none;
+}
+
+/*-----------mediaqueries-------------*/
+@media screen and (max-width: 1366px) {
+    .navproduct {
+        margin-left: 50%;
+    }
+
+    .imgmodellen {
+        width: 200%;
+    }
+
+    .foto {
+        max-width: 50%;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .navproduct {
+        background: none;
+        position: fixed;
+        border-radius: 10px;
+        height: 100px;
+        marker-end: none;
+        margin-top: 1%;
+        width: 160px;
+        margin-left: auto;
+    }
+
+    .linkproduct {
+        padding: 0;
+        display: block;
+        text-align: center;
+        height: 60px;
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .navproduct {
+        position: relative;
+        display: flex;
+        border-radius: 10px;
+        marker-end: none;
+        margin-left: auto;
+        grid-area: header;
+        flex-direction: row;
+        grid-column-start: 1;
+        grid-column-end: 5;
+        height: 100px;
+        min-width: 100%;
+        margin-bottom: 100px;
+    }
+
+    .headerproductpagina {
+        margin-bottom: 250px;
+    }
+
+    .h2product {
+        float: left;
+    }
+
+    .bodymodel { /* indelen van de pagina */
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 10fr 10fr 1fr;
+        grid-template-areas: "header header" "aside aside" "main main" "footer footer";
+    }
+
+    .figuremodel { /* foto */
+        grid-area: aside;
+    }
+
+    .mainmodel { /* tekst */
+        grid-area: main;
+    }
+
+    .asidepers1 {
+        margin-top: -100px;
+    }
+
+    .asidepers2 {
+        margin-top: -100px;
+    }
+
+    footer {
+        padding: 0 10% 0 10%;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .figuremodel {
+        margin-top: 40%;
+    }
+}
+
+@media screen and (max-width: 680px) {
+    nav a, .loginmenu {
+        float: none;
+        width: 100%;
+        padding-bottom: 20px;
+    }
+
+    .headerproductpagina {
+        margin-bottom: 600px;
+    }
+
+    .h1product {
+        padding-top: 20px;
+    }
+
+    .figuremodel {
+        margin-top: 500px;
+    }
+
+    /*blog*/
+    .headerblog {
+        margin-bottom: 500px;
+    }
+
+    .geschiedenisbmw {
+        position: relative;
+    }
+
+    .formaanmelden {
+        position: relative;
+    }
+}
+
+/* milestone 9 */
+span {
+    display: block;
+    margin: 10px auto;
+    width: 100%;
+    color: red;
+}
+/*-------------*/
+
+
